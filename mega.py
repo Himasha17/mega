@@ -15,7 +15,7 @@ ___________________________________________________________
 \033[1;34;40m     | |  | |  __/ (_| |/ ___ \  |  _ <| |_| | |\  |
 \033[1;36;40m     |_|  |_|\___|\__, /_/   \_\ |_| \_\\____/|_| \_|
 \033[1;34;40m                  |___/
-\033[1;35;40m              [+] Tool By Malith(SK Dev)
+\033[1;35;40m              [+] Tool By SK Dev
 \033[1;32;40m___________________________________________________________
 """
 print(name, "")
@@ -27,8 +27,13 @@ try:
     f.close 
 except:
     wr = str(input("\033[1;0;40mPaste Your Auth here :- "))
-    auth = wr
-    
+    f = open("auth.txt", "w")
+    f.write(wr)
+    f.close
+    f = open("auth.txt", "r")
+    auth = f.read()
+    f.close
+
 try:
     f = open("url.txt", "r")
     f = open("url.txt", "r")
@@ -36,7 +41,12 @@ try:
     f.close
 except:
     wr = str(input("Paste Your URL here :- "))
-    url1 = wr
+    f = open("url.txt", "w")
+    f.write(wr)
+    f.close
+    f = open("url.txt", "r")
+    url1 = f.read()
+    f.close
 
 try:
     import requests
